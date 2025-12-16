@@ -74,11 +74,6 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 ### Ⅲ. Architecture Diagram
 The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
 ![System Architecture](連結到圖片路徑)
-*(Note: Please upload your 3-layer diagram to the 'images' folder)*
-
-* **Core Control Logic:** The ESP8266 executes dual asynchronous timers. Timer #1 polls sensors every 5 seconds, while Timer #2 performs a high-frequency (200ms) **Safety Check** to monitor the relay and pump status.
-* **Vision & Streaming Logic:** The ESP32-CAM captures frames every 40ms to maintain a smooth MJPEG stream for the mobile app, while simultaneously supporting snapshot triggers for the web dashboard.
-* **State Synchronization:** Using the `BLYNK_CONNECTED` trigger, the system automatically synchronizes local variables (thresholds, modes) with the cloud during startup or reconnection.
 
 
 
