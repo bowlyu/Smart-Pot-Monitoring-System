@@ -24,11 +24,11 @@ Integrates with the Blynk IoT platform, enabling users to monitor sensor reading
 
 We chose this project based on two perspectives:
 
-**1. The Micro Problem (Daily Plant Care)**
+1. **The Micro Problem (Daily Plant Care)**  
 * **Busy Lifestyles:** Due to busy schedules, people often struggle to keep their plants alive.
 * **Lack of Data:** Traditional care is based on guesswork and lacks the precise data (moisture, temperature) needed for optimal plant health.
 
-**2. The Macro Challenge (IIoT Testbed)**
+2. **The Macro Challenge (IIoT Testbed)**
 * **Industrial Scale:** Modern industries rely on large-scale IIoT systems for monitoring and automation.
 * **Low-Risk Prototyping:** Developing these systems in real-world environments is expensive and risky. Our project serves as a "Mini-Lab" to test the IoT lifecycle in a cost-effective way.
 
@@ -37,11 +37,11 @@ We chose this project based on two perspectives:
 
 Our goals are centered on delivering both practical utility and technical validation:
 
-**1. Application Value**
+1. **Application Value**
 * **Smart Home Integration:** To deliver a smart home application that integrates sensor data, live visuals, and remote control.
 * **Enhanced Utility:** Showcasing the practical value of IoT beyond simple automated watering, creating a holistic plant-care experience.
 
-**2. Technical Value**
+2. **Technical Value**
 * **Architecture Validation:** To validate a highly reliable and scalable cloud data architecture.
 * **Scalable Foundation:** Serving as a technical foundation for future expansion into complex industrial scenarios, such as large-scale greenhouse automation.
 
