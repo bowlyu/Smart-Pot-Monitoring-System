@@ -19,7 +19,6 @@ This project integrates environmental sensing and automation using an ESP8266 co
    4. **Cross-Platform Data Visualization:**  
    Integrates with the Blynk IoT platform, enabling users to monitor sensor readings and live video feeds via a mobile app or web interface from anywhere.
 
-
 ### Ⅱ. Motivation
 
 We chose this project based on two perspectives:
@@ -31,7 +30,6 @@ We chose this project based on two perspectives:
 2. **The Macro Challenge (IIoT Testbed)**
    * **Industrial Scale:** Modern industries rely on large-scale IIoT systems for monitoring and automation.
    * **Low-Risk Prototyping:** Developing these systems in real-world environments is expensive and risky. Our project serves as a "Mini-Lab" to test the IoT lifecycle in a cost-effective way.
-
 
 ### Ⅲ. Objectives
 
@@ -54,19 +52,6 @@ Our goals are centered on delivering both practical utility and technical valida
 
 
 ## System Architecture
-### Ⅰ. Main Components（內容待更改）
-   * **Controller:** ESP8266 (NodeMCU), ESP32-CAM（內容待更改）
-   * **Cloud Platform:** Blynk IoT Cloud（內容待更改）
-   * **Protocol:** MQTT / HTTP（內容待更改）
-
-### Ⅱ. Functions（內容待更改）
-   1. **Auto-Irrigation:** 當土壤濕度低於設定值時，自動啟動水泵。
-   2. **Environmental Sensing:** 監測溫度、濕度與光照。
-   3. **Live Streaming:** 透過網頁端查看植物即時影像。
-
-
-
-## System Architecture
 
 Our system is built on a three-layer IoT architecture (Perception, Network, and Application) to ensure reliable data transmission and precise environmental control.
 
@@ -80,20 +65,18 @@ Our system is built on a three-layer IoT architecture (Perception, Network, and 
 ### Ⅱ. System Functions
 To fulfill the requirements of an IIoT testbed, the system operates across the following functional domains:
 
-* **Monitor (Sensing):** Continuously polls soil moisture levels (mapped to a 0-100% scale) and ambient environmental data.
-* **Actuation (Control):** Features automated pump activation based on user-defined moisture thresholds, including a **Safety Check mechanism** to prevent over-irrigation.
-* **Communication (Protocol):** * **MQTT/TCP:** Facilitates real-time bidirectional data exchange between the ESP8266 and Blynk Cloud.
+   * **Monitor (Sensing):** Continuously polls soil moisture levels (mapped to a 0-100% scale) and ambient environmental data.
+   * **Actuation (Control):** Features automated pump activation based on user-defined moisture thresholds, including a **Safety Check mechanism** to prevent over-irrigation.
+   * **Communication (Protocol):** * **MQTT/TCP:** Facilitates real-time bidirectional data exchange between the ESP8266 and Blynk Cloud.
     * **HTTP Server:** The ESP32-CAM hosts a local server to provide MJPEG streams and JPEG snapshots via HTTP GET requests.
-* **Power Management:** Ensures consistent voltage for accurate sensor readings and sufficient torque for the water pump.
-* **Data Platform:** Utilizes the **Blynk IoT Platform** for real-time dashboarding, historical data logging, and mobile push notifications.
-* **Data Transmit:** Manages the flow of sensor telemetry to the cloud and command signals (e.g., threshold updates, manual overrides) back to the edge.
-
-
+   * **Power Management:** Ensures consistent voltage for accurate sensor readings and sufficient torque for the water pump.
+   * **Data Platform:** Utilizes the **Blynk IoT Platform** for real-time dashboarding, historical data logging, and mobile push notifications.
+   * **Data Transmit:** Manages the flow of sensor telemetry to the cloud and command signals (e.g., threshold updates, manual overrides) back to the edge.
 
 ### Ⅲ. Logic Workflow & Architecture Diagram
 The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
 
-![System Architecture](images/architecture_diagram.png)
+![System Architecture](連結到圖片路徑)
 *(Note: Please upload your 3-layer diagram to the 'images' folder)*
 
 * **Core Control Logic:** The ESP8266 executes dual asynchronous timers. Timer #1 polls sensors every 5 seconds, while Timer #2 performs a high-frequency (200ms) **Safety Check** to monitor the relay and pump status.
