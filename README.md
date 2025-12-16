@@ -66,8 +66,9 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 
    * **Monitor:** Real-time environmental tracking and data normalization (mapping raw sensor signals to percentage values).
    * **Actuation:** Automated irrigation triggered by thresholds, featuring a **Safety Check mechanism** to prevent hardware failure or over-watering.
-   * **Communication:** * **MQTT:** For telemetry and command exchange with Blynk Cloud.
-       * **HTTP:** Local server hosting on ESP32-CAM for low-latency visual feeds.
+   * **Communication:**
+      * **MQTT:** For telemetry and command exchange with Blynk Cloud.
+      * **HTTP:** Local server hosting on ESP32-CAM for low-latency visual feeds.
    * **Data Platform:** Cloud-based dashboard for visualization, historical logging, and remote manual override.
 
 ### Ⅲ. Architecture Diagram
@@ -78,10 +79,6 @@ The system integrates complex logic flows to ensure the plant receives care even
 * **Core Control Logic:** The ESP8266 executes dual asynchronous timers. Timer #1 polls sensors every 5 seconds, while Timer #2 performs a high-frequency (200ms) **Safety Check** to monitor the relay and pump status.
 * **Vision & Streaming Logic:** The ESP32-CAM captures frames every 40ms to maintain a smooth MJPEG stream for the mobile app, while simultaneously supporting snapshot triggers for the web dashboard.
 * **State Synchronization:** Using the `BLYNK_CONNECTED` trigger, the system automatically synchronizes local variables (thresholds, modes) with the cloud during startup or reconnection.
-
-
-
-
 
 
 
@@ -129,17 +126,34 @@ The hardware design emphasizes power isolation and precise signal routing.
 
 
 
+
+
 ## Software
-### Ⅰ. Features（內容待更改）
-* **Threshold Alerts:** 當濕度過低時發送手機推播。
-* **History Data:** 記錄並顯示過去 24 小時的環境變化圖表。
 
-### Ⅱ. Requirements（內容待更改）
-* Arduino IDE (with ESP8266 & Blynk libraries)
-* Blynk Mobile App
+#### Ⅰ. Features
+* **Smart Automated Irrigation:** Threshold-based triggering with real-time moisture feedback.
+* **Safety Fail-safe System:** High-frequency (200ms) safety timer to prevent pump over-execution.
+* **Real-Time Analytics:** Continuous tracking of moisture, temperature, and humidity.
+* **Live Video Feed:** 25 FPS MJPEG streaming and instant snapshots via ESP32-CAM.
+* **Dual-Platform Access:** Synchronized control via mobile and web interfaces.
 
-### Ⅲ. Visualization (Mobile & Web Interface)
-(貼 Blynk 截圖)
+#### Ⅱ. Requirements
+* **Software:** Arduino IDE (v2.0+), Blynk IoT Cloud account.
+* **Libraries:** `BlynkSimpleEsp8266`, `DHT sensor library`, `ESP32_Camera`.
+* **Hardware Environment:** ESP8266 & ESP32-CAM setup as defined in [Hardware](#hardware).
+* **Network:** Stable 2.4GHz Wi-Fi connection.
+
+#### Ⅲ. Visualization
+The system utilizes the Blynk IoT platform to provide a seamless monitoring experience across devices.
+
+**Mobile App Interface**
+（ Blynk 手機截圖）
+* Provides real-time gauges for environmental data and tactile buttons for manual pump control and mode switching.
+
+**Web Dashboard**
+（ Blynk 網頁截圖）
+* Offers high-resolution "Super Charts" for long-term trend analysis and an image gallery for ESP32-CAM snapshots.
+
 
 
 
