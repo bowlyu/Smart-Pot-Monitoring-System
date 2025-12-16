@@ -5,6 +5,7 @@ This project integrates environmental sensing and automation using an ESP8266 co
 
 
 ## Project Description
+
 ### Ⅰ. Core Functions
 1. **Real-time Environmental Sensing:**  
 Utilizes high-precision temperature and soil moisture sensors to continuously collect environmental data.
@@ -12,10 +13,10 @@ Utilizes high-precision temperature and soil moisture sensors to continuously co
 2. **Automated Irrigation System:**  
 Features an integrated microcontroller that analyzes sensor data and automatically activates the water pump when moisture levels fall below a specific threshold.
 
-3. **Live Visual Monitoring:** 
+3. **Live Visual Monitoring:**  
 Employs a camera module (ESP32-CAM) to capture and track the plant’s growth and health status in real-time.
 
-4. **Cross-Platform Data Visualization:** 
+4. **Cross-Platform Data Visualization:**  
 Integrates with the Blynk IoT platform, enabling users to monitor sensor readings and live video feeds via a mobile app or web interface from anywhere.
 
 
@@ -31,6 +32,7 @@ We chose this project based on two perspectives:
 * **Industrial Scale:** Modern industries rely on large-scale IIoT systems for monitoring and automation.
 * **Low-Risk Prototyping:** Developing these systems in real-world environments is expensive and risky. Our project serves as a "Mini-Lab" to test the IoT lifecycle in a cost-effective way.
 
+
 ### Ⅲ. Objectives
 
 Our goals are centered on delivering both practical utility and technical validation:
@@ -42,6 +44,7 @@ Our goals are centered on delivering both practical utility and technical valida
 **2. Technical Value**
 * **Architecture Validation:** To validate a highly reliable and scalable cloud data architecture.
 * **Scalable Foundation:** Serving as a technical foundation for future expansion into complex industrial scenarios, such as large-scale greenhouse automation.
+
 
 
 ## Product Design
@@ -60,6 +63,48 @@ Our goals are centered on delivering both practical utility and technical valida
 1. **Auto-Irrigation:** 當土壤濕度低於設定值時，自動啟動水泵。
 2. **Environmental Sensing:** 監測溫度、濕度與光照。
 3. **Live Streaming:** 透過網頁端查看植物即時影像。
+
+
+
+## System Architecture
+
+Our system is built on a three-layer IoT architecture (Perception, Network, and Application) to ensure reliable data transmission and precise environmental control.
+
+### Ⅰ. Main Components
+* **Control Unit:** NodeMCU ESP8266 (Handles core logic, sensor polling, and Blynk cloud connectivity).
+* **Vision Unit:** ESP32-CAM (Independent module dedicated to high-speed MJPEG video streaming and snapshots).
+* **Sensing Module:** Capacitive Soil Moisture Sensor (Corrosion resistant) and DHT11 Temperature/Humidity Sensor.
+* **Actuation Module:** 5V Submersible Water Pump driven by a Single-Channel Relay.
+* **Power System:** Stable 5V DC power supply via Micro-USB, distributed to both microcontrollers and peripheral modules.
+
+### Ⅱ. System Functions
+To fulfill the requirements of an IIoT testbed, the system operates across the following functional domains:
+
+* **Monitor (Sensing):** Continuously polls soil moisture levels (mapped to a 0-100% scale) and ambient environmental data.
+* **Actuation (Control):** Features automated pump activation based on user-defined moisture thresholds, including a **Safety Check mechanism** to prevent over-irrigation.
+* **Communication (Protocol):** * **MQTT/TCP:** Facilitates real-time bidirectional data exchange between the ESP8266 and Blynk Cloud.
+    * **HTTP Server:** The ESP32-CAM hosts a local server to provide MJPEG streams and JPEG snapshots via HTTP GET requests.
+* **Power Management:** Ensures consistent voltage for accurate sensor readings and sufficient torque for the water pump.
+* **Data Platform:** Utilizes the **Blynk IoT Platform** for real-time dashboarding, historical data logging, and mobile push notifications.
+* **Data Transmit:** Manages the flow of sensor telemetry to the cloud and command signals (e.g., threshold updates, manual overrides) back to the edge.
+
+
+
+### Ⅲ. Logic Workflow & Architecture Diagram
+The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
+
+![System Architecture](images/architecture_diagram.png)
+*(Note: Please upload your 3-layer diagram to the 'images' folder)*
+
+* **Core Control Logic:** The ESP8266 executes dual asynchronous timers. Timer #1 polls sensors every 5 seconds, while Timer #2 performs a high-frequency (200ms) **Safety Check** to monitor the relay and pump status.
+* **Vision & Streaming Logic:** The ESP32-CAM captures frames every 40ms to maintain a smooth MJPEG stream for the mobile app, while simultaneously supporting snapshot triggers for the web dashboard.
+* **State Synchronization:** Using the `BLYNK_CONNECTED` trigger, the system automatically synchronizes local variables (thresholds, modes) with the cloud during startup or reconnection.
+
+
+
+
+
+
 
 
 
