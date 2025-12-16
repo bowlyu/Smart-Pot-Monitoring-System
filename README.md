@@ -3,7 +3,7 @@
 This project integrates environmental sensing and automation using an ESP8266 controller. It transmits soil moisture and temperature data to Blynk via MQTT. The system triggers auto-irrigation when moisture drops below a threshold and enables real-time visual monitoring via ESP32-CAM.
 
 
-<br>
+
 ## Project Description
 ### Ⅰ. Core Functions
 1. **Real-time Environmental Sensing:**  
@@ -32,10 +32,16 @@ We chose this project based on two perspectives:
 * **Low-Risk Prototyping:** Developing these systems in real-world environments is expensive and risky. Our project serves as a "Mini-Lab" to test the IoT lifecycle in a cost-effective way.
 
 ### Ⅲ. Objectives
-* 目標一
-* 目標二
-* 目標三
 
+Our goals are centered on delivering both practical utility and technical validation:
+
+**1. Application Value**
+* **Smart Home Integration:** To deliver a smart home application that integrates sensor data, live visuals, and remote control.
+* **Enhanced Utility:** Showcasing the practical value of IoT beyond simple automated watering, creating a holistic plant-care experience.
+
+**2. Technical Value**
+* **Architecture Validation:** To validate a highly reliable and scalable cloud data architecture.
+* **Scalable Foundation:** Serving as a technical foundation for future expansion into complex industrial scenarios, such as large-scale greenhouse automation.
 
 
 ## Product Design
