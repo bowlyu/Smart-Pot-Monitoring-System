@@ -53,29 +53,25 @@ Our goals are centered on delivering both practical utility and technical valida
 
 ## System Architecture
 
-Our system is built on a three-layer IoT architecture (Perception, Network, and Application) to ensure reliable data transmission and precise environmental control.
+Our system is built on a standard three-layer IoT architecture, ensuring seamless integration between hardware sensing, logic control, and cloud visualization.
 
 ### Ⅰ. Main Components
-   * **Control Unit:** NodeMCU ESP8266 (Handles core logic, sensor polling, and Blynk cloud connectivity).
-   * **Vision Unit:** ESP32-CAM (Independent module dedicated to high-speed MJPEG video streaming and snapshots).
-   * **Sensing Module:** Capacitive Soil Moisture Sensor (Corrosion resistant) and DHT11 Temperature/Humidity Sensor.
-   * **Actuation Module:** 5V Submersible Water Pump driven by a Single-Channel Relay.
-   * **Power System:** Stable 5V DC power supply via Micro-USB, distributed to both microcontrollers and peripheral modules.
+   * **System Logic Controller (NodeMCU ESP8266):** The central brain of the project, responsible for executing automation logic, sensor data processing, and cloud synchronization.
+   * **Independent Vision Unit (ESP32-CAM):** A dedicated module for real-time MJPEG video streaming and snapshots, operating independently to ensure network stability.
+   * **Perception Module:** Includes soil moisture and ambient environmental sensors for continuous data collection.
+   * **Irrigation Actuator:** A high-reliability relay and pump system that performs physical watering based on controller commands.
 
 ### Ⅱ. System Functions
-To fulfill the requirements of an IIoT testbed, the system operates across the following functional domains:
+To ensure a robust IIoT testbed, the functions are organized as follows:
 
-   * **Monitor (Sensing):** Continuously polls soil moisture levels (mapped to a 0-100% scale) and ambient environmental data.
-   * **Actuation (Control):** Features automated pump activation based on user-defined moisture thresholds, including a **Safety Check mechanism** to prevent over-irrigation.
-   * **Communication (Protocol):** * **MQTT/TCP:** Facilitates real-time bidirectional data exchange between the ESP8266 and Blynk Cloud.
-    * **HTTP Server:** The ESP32-CAM hosts a local server to provide MJPEG streams and JPEG snapshots via HTTP GET requests.
-   * **Power Management:** Ensures consistent voltage for accurate sensor readings and sufficient torque for the water pump.
-   * **Data Platform:** Utilizes the **Blynk IoT Platform** for real-time dashboarding, historical data logging, and mobile push notifications.
-   * **Data Transmit:** Manages the flow of sensor telemetry to the cloud and command signals (e.g., threshold updates, manual overrides) back to the edge.
+   * **Monitor:** Real-time environmental tracking and data normalization (mapping raw sensor signals to percentage values).
+   * **Actuation:** Automated irrigation triggered by thresholds, featuring a **Safety Check mechanism** to prevent hardware failure or over-watering.
+   * **Communication:** * **MQTT:** For telemetry and command exchange with Blynk Cloud.
+       * **HTTP:** Local server hosting on ESP32-CAM for low-latency visual feeds.
+   * **Data Platform:** Cloud-based dashboard for visualization, historical logging, and remote manual override.
 
-### Ⅲ. Logic Workflow & Architecture Diagram
+### Ⅲ. Architecture Diagram
 The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
-
 ![System Architecture](連結到圖片路徑)
 *(Note: Please upload your 3-layer diagram to the 'images' folder)*
 
@@ -89,20 +85,47 @@ The system integrates complex logic flows to ensure the plant receives care even
 
 
 
-
-
 ## Hardware
-### Ⅰ. Components and Specifications（內容待更改）
-| Component | Specification |
-| :--- | :--- |
-| ESP8266 | Wi-Fi Module for Logic Control |
-| Capacitive Soil Moisture Sensor | Corrosion resistant |
-| DHT11 | Temp & Humidity Sensor |
-| 5V Relay & Pump | For Irrigation |
 
-### Ⅱ. Connections and System Design (Wiring Diagram)
-(上傳接線圖圖片到 GitHub 檔案庫，然後在這裡引用)
-`![Wiring Diagram](docs/wiring-diagram.png)`
+### Ⅰ. Components and Specifications
+* **ESP8266**
+    * **Specifications**: 80MHz CPU, 4MB Flash, 802.11 b/g/n Wi-Fi.
+    * **Operation**: Executes the main firmware, manages Wi-Fi reconnection, and handles SSL/TLS for cloud security.
+* **ESP32-CAM**
+    * **Specifications**: OV2640 lens, 1600 x 1200 UXGA resolution, built-in LED flash.
+    * **Operation**: Captures images and encodes MJPEG streams at 25-30 FPS for real-time monitoring.
+* **Capacitive Soil Moisture Sensor (v1.2)**
+    * **Specifications**: Operating voltage 3.3V - 5.5V, Output 0 - 3.0V DC.
+    * **Operation**: Uses capacitive sensing to prevent probe corrosion, ensuring long-term reliability in wet soil.
+* **DHT11 Sensor**
+    * **Specifications**: Temp range 0-50°C (±2°C), Humidity 20-90% (±5%).
+    * **Operation**: Provides supplementary climate data to assess evaporation rates.
+* **1-Channel Relay & 5V Water Pump**
+    * **Specifications**: Relay triggers at 5V, Pump flow rate 1.5-2.0 L/min.
+    * **Operation**: Provides physical isolation between the low-power MCU and the high-current motor.
+
+### Ⅱ. Connections and System Design
+The hardware design emphasizes power isolation and precise signal routing.
+
+#### **Pin Mapping Table**
+| Component | Microcontroller Pin | Function |
+| :--- | :--- | :--- |
+| Soil Moisture Sensor | ESP8266 - **A0** | Analog Data Input |
+| Relay Module (IN) | ESP8266 - **D1 (GPIO 5)** | Pump Control Signal |
+| DHT11 Sensor | ESP8266 - **D2 (GPIO 4)** | Digital Data Input |
+| ESP32-CAM | **Independent Power** | Vision Streaming |
+
+#### **Wiring Diagram**
+![Wiring Diagram](images/wiring-diagram.jpg)
+*(Note: Please ensure the image is uploaded to the 'images' folder)*
+
+#### **Simplified Connection Explanation**
+* **Signal Integrity**: The soil moisture sensor is connected to the A0 analog-to-digital converter (ADC) for precise humidity mapping.
+* **Power Isolation**: The ESP32-CAM is powered through a separate 5V line to avoid voltage drops during Wi-Fi transmission, which could otherwise cause the ESP8266 to reset.
+* **Circuit Protection**: The relay module acts as a buffer, ensuring that back-EMF from the water pump motor does not damage the sensitive GPIO pins of the microcontroller.
+
+
+
 
 
 
