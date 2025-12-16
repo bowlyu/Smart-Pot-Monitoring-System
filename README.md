@@ -7,47 +7,46 @@ This project integrates environmental sensing and automation using an ESP8266 co
 ## Project Description
 
 ### Ⅰ. Core Functions
-   1. **Real-time Environmental Sensing:**  
-   Utilizes high-precision temperature and soil moisture sensors to continuously collect environmental data.
+1. **Real-time Environmental Sensing**  
+Utilizes high-precision temperature and soil moisture sensors to continuously collect environmental data.
 
-   2. **Automated Irrigation System:**  
-   Features an integrated microcontroller that analyzes sensor data and automatically activates the water pump when moisture levels fall below a specific threshold.
+2. **Automated Irrigation System**  
+Features an integrated microcontroller that analyzes sensor data and automatically activates the water pump when moisture levels fall below a specific threshold.
 
-   3. **Live Visual Monitoring:**  
-   Employs a camera module (ESP32-CAM) to capture and track the plant’s growth and health status in real-time.
+3. **Live Visual Monitoring**  
+Employs a camera module (ESP32-CAM) to capture and track the plant’s growth and health status in real-time.
 
-   4. **Cross-Platform Data Visualization:**  
-   Integrates with the Blynk IoT platform, enabling users to monitor sensor readings and live video feeds via a mobile app or web interface from anywhere.
+4. **Cross-Platform Data Visualization**  
+Integrates with the Blynk IoT platform, enabling users to monitor sensor readings and live video feeds via a mobile app or web interface from anywhere.
 
 ### Ⅱ. Motivation
 
 We chose this project based on two perspectives:
 
 1. **The Micro Problem (Daily Plant Care)**  
-   * **Busy Lifestyles:** Due to busy schedules, people often struggle to keep their plants alive.
-   * **Lack of Data:** Traditional care is based on guesswork and lacks the precise data (moisture, temperature) needed for optimal plant health.
+* **Busy Lifestyles:** Due to busy schedules, people often struggle to keep their plants alive.
+* **Lack of Data:** Traditional care is based on guesswork and lacks the precise data (moisture, temperature) needed for optimal plant health.
 
 2. **The Macro Challenge (IIoT Testbed)**
-   * **Industrial Scale:** Modern industries rely on large-scale IIoT systems for monitoring and automation.
-   * **Low-Risk Prototyping:** Developing these systems in real-world environments is expensive and risky. Our project serves as a "Mini-Lab" to test the IoT lifecycle in a cost-effective way.
+* **Industrial Scale:** Modern industries rely on large-scale IIoT systems for monitoring and automation.
+* **Low-Risk Prototyping:** Developing these systems in real-world environments is expensive and risky. Our project serves as a "Mini-Lab" to test the IoT lifecycle in a cost-effective way.
 
 ### Ⅲ. Objectives
 
 Our goals are centered on delivering both practical utility and technical validation:
 
 1. **Application Value**
-   * **Smart Home Integration:** To deliver a smart home application that integrates sensor data, live visuals, and remote control.
-   * **Enhanced Utility:** Showcasing the practical value of IoT beyond simple automated watering, creating a holistic plant-care experience.
+* **Smart Home Integration:** To deliver a smart home application that integrates sensor data, live visuals, and remote control.
+* **Enhanced Utility:** Showcasing the practical value of IoT beyond simple automated watering, creating a holistic plant-care experience.
 
 2. **Technical Value**
-   * **Architecture Validation:** To validate a highly reliable and scalable cloud data architecture.
-   * **Scalable Foundation:** Serving as a technical foundation for future expansion into complex industrial scenarios, such as large-scale greenhouse automation.
+* **Architecture Validation:** To validate a highly reliable and scalable cloud data architecture.
+* **Scalable Foundation:** Serving as a technical foundation for future expansion into complex industrial scenarios, such as large-scale greenhouse automation.
 
 
 
 ## Product Design
-![草圖](images/draft.png)
-![成品照](images/Plot.JPG)
+<img src="images/Plot.JPG" width="300px">   <img src="images/draft.png" width="620px">  
 
 
 
@@ -56,20 +55,20 @@ Our goals are centered on delivering both practical utility and technical valida
 Our system is built on a standard three-layer IoT architecture, ensuring seamless integration between hardware sensing, logic control, and cloud visualization.
 
 ### Ⅰ. Main Components
-   * **System Logic Controller (NodeMCU ESP8266):** The central brain of the project, responsible for executing automation logic, sensor data processing, and cloud synchronization.
-   * **Independent Vision Unit (ESP32-CAM):** A dedicated module for real-time MJPEG video streaming and snapshots, operating independently to ensure network stability.
-   * **Perception Module:** Includes soil moisture and ambient environmental sensors for continuous data collection.
-   * **Irrigation Actuator:** A high-reliability relay and pump system that performs physical watering based on controller commands.
+* **System Logic Controller (NodeMCU ESP8266):** The central brain of the project, responsible for executing automation logic, sensor data processing, and cloud synchronization.
+* **Independent Vision Unit (ESP32-CAM):** A dedicated module for real-time MJPEG video streaming and snapshots, operating independently to ensure network stability.
+* **Perception Module:** Includes soil moisture and ambient environmental sensors for continuous data collection.
+* **Irrigation Actuator:** A high-reliability relay and pump system that performs physical watering based on controller commands.
 
 ### Ⅱ. System Functions
 To ensure a robust IIoT testbed, the functions are organized as follows:
 
-   * **Monitor:** Real-time environmental tracking and data normalization (mapping raw sensor signals to percentage values).
-   * **Actuation:** Automated irrigation triggered by thresholds, featuring a **Safety Check mechanism** to prevent hardware failure or over-watering.
-   * **Communication:**
-      * **MQTT:** For telemetry and command exchange with Blynk Cloud.
-      * **HTTP:** Local server hosting on ESP32-CAM for low-latency visual feeds.
-   * **Data Platform:** Cloud-based dashboard for visualization, historical logging, and remote manual override.
+* **Monitor:** Real-time environmental tracking and data normalization (mapping raw sensor signals to percentage values).
+* **Actuation:** Automated irrigation triggered by thresholds, featuring a **Safety Check mechanism** to prevent hardware failure or over-watering.
+* **Communication:**
+   * **MQTT:** For telemetry and command exchange with Blynk Cloud.
+   * **HTTP:** Local server hosting on ESP32-CAM for low-latency visual feeds.
+* **Data Platform:** Cloud-based dashboard for visualization, historical logging, and remote manual override.
 
 ### Ⅲ. Architecture Diagram
 The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
@@ -109,7 +108,6 @@ The hardware design emphasizes power isolation and precise signal routing.
 
 #### **Wiring Diagram**
 ![Wiring Diagram](images/wiring-diagram.jpg)
-*(Note: Please ensure the image is uploaded to the 'images' folder)*
 
 #### **Simplified Connection Explanation**
 * **Signal Integrity**: The soil moisture sensor is connected to the A0 analog-to-digital converter (ADC) for precise humidity mapping.
@@ -118,59 +116,69 @@ The hardware design emphasizes power isolation and precise signal routing.
 
 
 
-
-
-
-
-
 ## Software
 
-#### Ⅰ. Features
+### Ⅰ. Features
 * **Smart Automated Irrigation:** Threshold-based triggering with real-time moisture feedback.
 * **Safety Fail-safe System:** High-frequency (200ms) safety timer to prevent pump over-execution.
 * **Real-Time Analytics:** Continuous tracking of moisture, temperature, and humidity.
 * **Live Video Feed:** 25 FPS MJPEG streaming and instant snapshots via ESP32-CAM.
 * **Dual-Platform Access:** Synchronized control via mobile and web interfaces.
 
-#### Ⅱ. Requirements
+### Ⅱ. Requirements
 * **Software:** Arduino IDE (v2.0+), Blynk IoT Cloud account.
 * **Libraries:** `BlynkSimpleEsp8266`, `DHT sensor library`, `ESP32_Camera`.
 * **Hardware Environment:** ESP8266 & ESP32-CAM setup as defined in [Hardware](#hardware).
 * **Network:** Stable 2.4GHz Wi-Fi connection.
 
-#### Ⅲ. Visualization
+### Ⅲ. Visualization
 The system utilizes the Blynk IoT platform to provide a seamless monitoring experience across devices.
 
 **Mobile App Interface**
-（ Blynk 手機截圖）
 * Provides real-time gauges for environmental data and tactile buttons for manual pump control and mode switching.
+（ Blynk 手機截圖）
 
 **Web Dashboard**
-（ Blynk 網頁截圖）
 * Offers high-resolution "Super Charts" for long-term trend analysis and an image gallery for ESP32-CAM snapshots.
-
+（ Blynk 網頁截圖）
 
 
 
 ## Marketing
+
 ### Ⅰ. Usage Scenarios
-* 情境一：辦公室懶人養植。
-* 情境二：出國度假時的遠端植栽照護。
+We have identified four primary scenarios where our Smart Pot Monitoring System provides significant value:
+
+* **Smart Home Integration:** 
+Perfect for standard potted plants in offices, balconies, or rental apartments. It allows you to "smarten up" your existing soil-based plants without the need to switch to complex hydroponic systems.
+* **Remote Care & Travel:** 
+Designed for busy professionals or frequent travelers. With real-time data, live video, and automated watering, you can manage your greenery from anywhere in the world with total peace of mind.
+* **Scaled Management:** 
+Our system is modular, meaning you can easily scale it up to monitor many plants at once. Manage multiple pots in different areas, like your living room and balcony, all from a single dashboard.
+* **Starter Kit for Precision Agriculture:** 
+In the future, professional sensors for parameters like EC, pH, or light can be added. This serves as an excellent starting point for small-scale, indoor precision farming.
 
 ### Ⅱ. Competitive Analysis
-與市售產品相比，本方案整合了 **ESP32-CAM 即時影像**，且具有更高的客製化彈性。
+
+| Feature | **Our Smart Pot System** | Traditional Pots | High-end Commercial Pots |
+| :--- | :--- | :--- | :--- |
+| **Connectivity** | **Wi-Fi (Blynk IoT)** | None | Proprietary App |
+| **Live Vision** | **Integrated (ESP32-CAM)** | No | Rare / Expensive |
+| **Scalability** | **High (Modular Design)** | Low | Low (Single Unit) |
+| **Cost** | **Affordable DIY** | Very Low | High ($$$) |
+| **Customization** | **Full (Open Source)** | None | Limited |
 
 
 
 ## Website & Source Code
-* **Project Page:** [Link to your GitHub Pages]
+* **Project Page:** [Link to your Website Pages]
 * **Source Code:** [Found in /src folder](./src)
 * **BOM (Bill of Materials):** [View CSV File](./docs/bom.csv)
 
 
 
 ## About Us
-| Team Member | Stedunt ID | Responsibilities |
+| Team Member | Student ID | Responsibilities |
 | :--- | :--- | :--- |
 | 徐文彬 | M11451013 | Hardware |
 | 王才瑜 | M11451015 | Website |
