@@ -13,13 +13,13 @@ This project integrates environmental sensing and automation using an ESP8266 co
 * 目標二
 * 目標三
 
----
+
 
 ## Product Design
 (這裡放成品的外觀設計草圖&實際照片)
 `![Product Design](連結到圖片路徑)`
 
----
+
 
 ## System Architecture
 ### Main Components（內容待更改）
@@ -32,7 +32,7 @@ This project integrates environmental sensing and automation using an ESP8266 co
 2. **Environmental Sensing:** 監測溫度、濕度與光照。
 3. **Live Streaming:** 透過網頁端查看植物即時影像。
 
----
+
 
 ## Hardware
 ### Components and Specifications（內容待更改）
@@ -47,7 +47,7 @@ This project integrates environmental sensing and automation using an ESP8266 co
 (上傳接線圖圖片到 GitHub 檔案庫，然後在這裡引用)
 `![Wiring Diagram](docs/wiring-diagram.png)`
 
----
+
 
 ## Software
 ### Features（內容待更改）
