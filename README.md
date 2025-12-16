@@ -46,7 +46,7 @@ Our goals are centered on delivering both practical utility and technical valida
 
 
 ## Product Design
-![草圖](images/Product design draft.png)
+![草圖](images/draft.png)
 ![成品照](images/Plot.JPG)
 
 
