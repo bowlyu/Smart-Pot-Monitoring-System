@@ -47,8 +47,7 @@ Our goals are centered on delivering both practical utility and technical valida
 
 ## Product Design
 (這裡放成品的外觀設計草圖&實際照片)
-`![Product Design](連結到圖片路徑)`
-
+![成品照](images/Plot.JPG)
 
 
 ## System Architecture
