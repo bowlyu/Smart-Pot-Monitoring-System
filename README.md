@@ -81,11 +81,10 @@ This project integrates environmental sensing and automation using an ESP8266 co
 ---
 
 ## About Us
-* **Team Member 1:** (Name/Role)
-* **Team Member 2:** (Name/Role)
-* | Team Member | Stedunt ID | Responsibilities |
+| Team Member | Stedunt ID | Responsibilities |
 | :--- | :--- | :--- |
 | 徐文彬 | M11451013 | Hardware |
 | 王才瑜 | M11451015 | Website |
 | 呂羿樺 | M11451017 | Software |
 | 蔡婉煜 | M11451028 | Github |
+
