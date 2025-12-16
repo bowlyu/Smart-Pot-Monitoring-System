@@ -61,7 +61,7 @@ This project integrates environmental sensing and automation using an ESP8266 co
 ### Visualization (Mobile & Web Interface)
 (貼 Blynk 截圖)
 
----
+
 
 ## Marketing
 ### Usage Scenarios
@@ -71,14 +71,14 @@ This project integrates environmental sensing and automation using an ESP8266 co
 ### Competitive Analysis
 與市售產品相比，本方案整合了 **ESP32-CAM 即時影像**，且具有更高的客製化彈性。
 
----
+
 
 ## Website & Source Code
 * **Project Page:** [Link to your GitHub Pages]
 * **Source Code:** [Found in /src folder](./src)
 * **BOM (Bill of Materials):** [View CSV File](./docs/bom.csv)
 
----
+
 
 ## About Us
 | Team Member | Stedunt ID | Responsibilities |
