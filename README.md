@@ -5,17 +5,21 @@ This project integrates environmental sensing and automation using an ESP8266 co
 
 
 ## Project Description
-### Core Functions
-1. **Real-time Environmental Sensing:**  Utilizes high-precision temperature and soil moisture sensors to continuously collect environmental data.
+### Ⅰ.Core Functions
+1. **Real-time Environmental Sensing:**  
+Utilizes high-precision temperature and soil moisture sensors to continuously collect environmental data.
 
-2. **Automated Irrigation System:**  Features an integrated microcontroller that analyzes sensor data and automatically activates the water pump when moisture levels fall below a specific threshold.
+2. **Automated Irrigation System:**  
+Features an integrated microcontroller that analyzes sensor data and automatically activates the water pump when moisture levels fall below a specific threshold.
 
-3. **Live Visual Monitoring:** Employs a camera module (ESP32-CAM) to capture and track the plant’s growth and health status in real-time.
+3. **Live Visual Monitoring:** 
+Employs a camera module (ESP32-CAM) to capture and track the plant’s growth and health status in real-time.
 
-4. **Cross-Platform Data Visualization:** Integrates with the Blynk IoT platform, enabling users to monitor sensor readings and live video feeds via a mobile app or web interface from anywhere.
+4. **Cross-Platform Data Visualization:** 
+Integrates with the Blynk IoT platform, enabling users to monitor sensor readings and live video feeds via a mobile app or web interface from anywhere.
 
 
-### Motivation
+### Ⅱ.Motivation
 
 We chose this project based on two perspectives:
 
@@ -27,7 +31,7 @@ We chose this project based on two perspectives:
 * **Industrial Scale:** Modern industries rely on large-scale IIoT systems for monitoring and automation.
 * **Low-Risk Prototyping:** Developing these systems in real-world environments is expensive and risky. Our project serves as a "Mini-Lab" to test the IoT lifecycle in a cost-effective way.
 
-### Objectives
+### Ⅲ.Objectives
 * 目標一
 * 目標二
 * 目標三
