@@ -5,7 +5,7 @@ This project integrates environmental sensing and automation using an ESP8266 co
 
 
 ## Project Description
-### Ⅰ. Core Functions
+### Ⅰ. Core Functions <br>
 1. **Real-time Environmental Sensing:**  
 Utilizes high-precision temperature and soil moisture sensors to continuously collect environmental data.
 
