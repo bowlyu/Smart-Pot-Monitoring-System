@@ -55,16 +55,16 @@ Our goals are centered on delivering both practical utility and technical valida
 Our system is built on a three-layer IoT architecture, ensuring seamless integration between hardware sensing, logic control, and cloud visualization.
 
 ### Ⅰ. Main Components
-* **System Logic Controller (NodeMCU ESP8266):** 
-* **Independent Vision Unit (ESP32-CAM):** 
-* **Perception Module:** 
-* **Irrigation Actuator:** 
+* System Logic Controller (NodeMCU ESP8266) 
+* Independent Vision Unit (ESP32-CAM)
+* Perception Module
+* Irrigation Actuator
 
 ### Ⅱ. System Functions
 To ensure a robust IIoT testbed, the functions are organized as follows:
-* **Monitor:** 
-* **Actuation:** 
-* **Data Platform:** 
+* Monitor 
+* Actuation 
+* Data Platform
 
 ### Ⅲ. Architecture Diagram
 <img src="images/LayeredArchitecture .png" width="400px"> 
@@ -80,10 +80,10 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 ## Hardware
 
 ### Ⅰ. Components and Specifications
-* **ESP8266**
-* **ESP32-CAM**
-* **Soil Moisture Sensor**
-* **1-Channel Relay & 5V Water Pump**
+* ESP8266
+* ESP32-CAM
+* Soil Moisture Sensor
+* 1-Channel Relay & 5V Water Pump
 
 ### Ⅱ. Connections and System Design
 The hardware design emphasizes power isolation and precise signal routing.
