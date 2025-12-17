@@ -52,7 +52,7 @@ Our goals are centered on delivering both practical utility and technical valida
 
 ## System Architecture
 
-Our system is built on a standard three-layer IoT architecture, ensuring seamless integration between hardware sensing, logic control, and cloud visualization.
+Our system is built on a three-layer IoT architecture, ensuring seamless integration between hardware sensing, logic control, and cloud visualization.
 
 ### Ⅰ. Main Components
 * **System Logic Controller (NodeMCU ESP8266):** The central brain of the project, responsible for executing automation logic, sensor data processing, and cloud synchronization.
@@ -64,14 +64,13 @@ Our system is built on a standard three-layer IoT architecture, ensuring seamles
 To ensure a robust IIoT testbed, the functions are organized as follows:
 
 * **Monitor:** Real-time environmental tracking and data normalization (mapping raw sensor signals to percentage values).
-* **Actuation:** Automated irrigation triggered by thresholds, featuring a **Safety Check mechanism** to prevent hardware failure or over-watering.
+* **Actuation:** Automated irrigation triggered by thresholds, featuring a Safety Check mechanism to prevent hardware failure or over-watering.
 * **Communication:**
    * **MQTT:** For telemetry and command exchange with Blynk Cloud.
    * **HTTP:** Local server hosting on ESP32-CAM for low-latency visual feeds.
 * **Data Platform:** Cloud-based dashboard for visualization, historical logging, and remote manual override.
 
 ### Ⅲ. Architecture Diagram
-The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
 <img src="images/LayeredArchitecture .png" width="600px"> 
 
 * **ESP32-CAM Software Logic & Execution Flow**
@@ -115,11 +114,6 @@ The hardware design emphasizes power isolation and precise signal routing.
 #### **Wiring Diagram**
 <img src="images/WiringDiagram.jpg" width="600px"> 
 
-#### **Simplified Connection Explanation**
-* **Signal Integrity**: The soil moisture sensor is connected to the A0 analog-to-digital converter (ADC) for precise humidity mapping.
-* **Power Isolation**: The ESP32-CAM is powered through a separate 5V line to avoid voltage drops during Wi-Fi transmission, which could otherwise cause the ESP8266 to reset.
-* **Circuit Protection**: The relay module acts as a buffer, ensuring that back-EMF from the water pump motor does not damage the sensitive GPIO pins of the microcontroller.
-
 
 
 ## Software
@@ -138,16 +132,13 @@ The hardware design emphasizes power isolation and precise signal routing.
 * **Network:** Stable 2.4GHz Wi-Fi connection.
 
 ### Ⅲ. Visualization
-The system utilizes the Blynk IoT platform to provide a seamless monitoring experience across devices.
-
-**Mobile App Interface**
-* Provides real-time gauges for environmental data and tactile buttons for manual pump control and mode switching.
-<img src="images/Mobile.jpg" width="300px">  
+The system utilizes the Blynk IoT platform to provide a monitoring experience across devices.  
 
 **Web Dashboard**
-* Offers high-resolution "Super Charts" for long-term trend analysis and an image gallery for ESP32-CAM snapshots.
 <img src="images/Dashboard.jpg" width="600px"> 
 
+**Mobile App Interface**
+<img src="images/Mobile.jpg" width="300px">
 
 
 ## Marketing
@@ -166,20 +157,19 @@ In the future, professional sensors for parameters like EC, pH, or light can be 
 
 ### Ⅱ. Competitive Analysis
 
-| Feature | **Our Smart Pot System** | Traditional Pots | High-end Commercial Pots |
-| :--- | :--- | :--- | :--- |
-| **Connectivity** | **Wi-Fi (Blynk IoT)** | None | Proprietary App |
-| **Live Vision** | **Integrated (ESP32-CAM)** | No | Rare / Expensive |
-| **Scalability** | **High (Modular Design)** | Low | Low (Single Unit) |
-| **Cost** | **Affordable DIY** | Very Low | High ($$$) |
-| **Customization** | **Full (Open Source)** | None | Limited |
+Our system provides a more observable and cost-effective solution compared to existing commercial products. By utilizing an open IoT architecture, we bridge the gap between simple monitoring and active plant care.
+
+| Existing Products | Core Features | Our Competitive Advantages |
+| :--- | :--- | :--- |
+| **Click & Grow** | Capsule-based cultivation with automatic watering and lighting; closed app ecosystem. | • **Cheaper:** Built on a modular open IoT architecture.• **Real-Time Visual Monitoring:** Integrated camera feed to see plant health directly. |
+| **AeroGarden** | Automated indoor hydroponic system focusing on water-based growth and lighting. | • **Comprehensive Sensing:** Includes soil moisture and temperature sensors.• **Smart Irrigation:** Waters based on real-time soil conditions, not fixed routines. |
+| **FYTA Beam** | Sensor-based monitoring providing data-driven recommendations via app. | • **Automated Action:** Provides direct irrigation control based on data, not just alerts.• **Integrated Dashboards:** Cross-platform monitoring and automated action through Cloud IoT. |
 
 
 
 ## Website & Source Code
-* **Project Page:** [Link to your Website Pages]
+* **Project Website:** [Smart Pot Monitoring System - Official Website](https://tsaiyuwang.wixsite.com/smart-pot-monitoring)
 * **Source Code:** [Found in /src folder](./src)
-* **BOM (Bill of Materials):** [View CSV File](./docs/bom.csv)
 
 
 
