@@ -72,6 +72,7 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 
 ### Ⅲ. Architecture Diagram
 The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
+<img src="images/LayeredArchitecture .png" width="600px"> 
 ![System Architecture](連結到圖片路徑)
 
 
@@ -107,7 +108,7 @@ The hardware design emphasizes power isolation and precise signal routing.
 | ESP32-CAM | **Independent Power** | Vision Streaming |
 
 #### **Wiring Diagram**
-![Wiring Diagram](images/wiring-diagram.jpg)
+<img src="images/WiringDiagram.jpg" width="600px"> 
 
 #### **Simplified Connection Explanation**
 * **Signal Integrity**: The soil moisture sensor is connected to the A0 analog-to-digital converter (ADC) for precise humidity mapping.
@@ -140,7 +141,7 @@ The system utilizes the Blynk IoT platform to provide a seamless monitoring expe
 
 **Web Dashboard**
 * Offers high-resolution "Super Charts" for long-term trend analysis and an image gallery for ESP32-CAM snapshots.
-（ Blynk 網頁截圖）
+<img src="images/Dashboard.jpg" width="600px"> 
 
 
 
