@@ -77,7 +77,7 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 <img src="images/SystemStructureESP32.png" width="400px">
 
 * **Blynk Cloud & ESP32-CAM Integration Architecture**
-<img src="images/StructureBlynk.png" width="750px"> 
+<img src="images/StructureBlynk.png" width="800px"> 
 
 
 
