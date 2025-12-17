@@ -46,7 +46,7 @@ Our goals are centered on delivering both practical utility and technical valida
 
 
 ## Product Design
-<img src="images/Plot.JPG" width="200px">   <img src="images/draft.png" width="420px">  <img src="images/Design2.jpg" width="300px"> 
+<img src="images/Plot.JPG" width="200px">   <img src="images/draft.png" width="400px">  <img src="images/Design2.jpg" width="350px"> 
 
 
 
@@ -71,10 +71,10 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 * **Data Platform:** Cloud-based dashboard for visualization, historical logging, and remote manual override.
 
 ### Ⅲ. Architecture Diagram
-<img src="images/LayeredArchitecture .png" width="200px"> 
+<img src="images/LayeredArchitecture .png" width="400px"> 
 
 * **ESP32-CAM Software Logic & Execution Flow**
-<img src="images/SystemStructureESP32.png" width="200px">
+<img src="images/SystemStructureESP32.png" width="400px">
 
 * **Blynk Cloud & ESP32-CAM Integration Architecture**
 <img src="images/StructureBlynk.png" width="700px"> 
