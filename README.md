@@ -74,10 +74,10 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
 <img src="images/LayeredArchitecture .png" width="600px"> 
 
-* **The Structure of ESP32-CAM**
+* **ESP32-CAM Software Logic & Execution Flow**
 <img src="images/SystemStructureESP32.png" width="500px">
 
-* **The Structure of Blynk**
+* **Blynk Cloud & ESP32-CAM Integration Architecture**
 <img src="images/StructureBlynk.png" width="800px"> 
 
 
