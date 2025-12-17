@@ -46,7 +46,7 @@ Our goals are centered on delivering both practical utility and technical valida
 
 
 ## Product Design
-<img src="images/Plot.JPG" width="300px">   <img src="images/draft.png" width="620px">  
+<img src="images/Plot.JPG" width="200px">   <img src="images/draft.png" width="420px">  <img src="images/Design2.jpg" width="300px"> 
 
 
 
@@ -136,7 +136,7 @@ The system utilizes the Blynk IoT platform to provide a seamless monitoring expe
 
 **Mobile App Interface**
 * Provides real-time gauges for environmental data and tactile buttons for manual pump control and mode switching.
-（ Blynk 手機截圖）
+<img src="images/Mobile.jpg" width="300px">  
 
 **Web Dashboard**
 * Offers high-resolution "Super Charts" for long-term trend analysis and an image gallery for ESP32-CAM snapshots.
