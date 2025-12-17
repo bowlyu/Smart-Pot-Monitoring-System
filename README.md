@@ -55,20 +55,16 @@ Our goals are centered on delivering both practical utility and technical valida
 Our system is built on a three-layer IoT architecture, ensuring seamless integration between hardware sensing, logic control, and cloud visualization.
 
 ### Ⅰ. Main Components
-* **System Logic Controller (NodeMCU ESP8266):** The central brain of the project, responsible for executing automation logic, sensor data processing, and cloud synchronization.
-* **Independent Vision Unit (ESP32-CAM):** A dedicated module for real-time MJPEG video streaming and snapshots, operating independently to ensure network stability.
-* **Perception Module:** Includes soil moisture and ambient environmental sensors for continuous data collection.
-* **Irrigation Actuator:** A high-reliability relay and pump system that performs physical watering based on controller commands.
+* **System Logic Controller (NodeMCU ESP8266):** 
+* **Independent Vision Unit (ESP32-CAM):** 
+* **Perception Module:** 
+* **Irrigation Actuator:** 
 
 ### Ⅱ. System Functions
 To ensure a robust IIoT testbed, the functions are organized as follows:
-
-* **Monitor:** Real-time environmental tracking and data normalization (mapping raw sensor signals to percentage values).
-* **Actuation:** Automated irrigation triggered by thresholds, featuring a Safety Check mechanism to prevent hardware failure or over-watering.
-* **Communication:**
-   * **MQTT:** For telemetry and command exchange with Blynk Cloud.
-   * **HTTP:** Local server hosting on ESP32-CAM for low-latency visual feeds.
-* **Data Platform:** Cloud-based dashboard for visualization, historical logging, and remote manual override.
+* **Monitor:** 
+* **Actuation:** 
+* **Data Platform:** 
 
 ### Ⅲ. Architecture Diagram
 <img src="images/LayeredArchitecture .png" width="400px"> 
@@ -85,31 +81,12 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 
 ### Ⅰ. Components and Specifications
 * **ESP8266**
-    * **Specifications**: 80MHz CPU, 4MB Flash, 802.11 b/g/n Wi-Fi.
-    * **Operation**: Executes the main firmware, manages Wi-Fi reconnection, and handles SSL/TLS for cloud security.
 * **ESP32-CAM**
-    * **Specifications**: OV2640 lens, 1600 x 1200 UXGA resolution, built-in LED flash.
-    * **Operation**: Captures images and encodes MJPEG streams at 25-30 FPS for real-time monitoring.
-* **Capacitive Soil Moisture Sensor (v1.2)**
-    * **Specifications**: Operating voltage 3.3V - 5.5V, Output 0 - 3.0V DC.
-    * **Operation**: Uses capacitive sensing to prevent probe corrosion, ensuring long-term reliability in wet soil.
-* **DHT11 Sensor**
-    * **Specifications**: Temp range 0-50°C (±2°C), Humidity 20-90% (±5%).
-    * **Operation**: Provides supplementary climate data to assess evaporation rates.
+* **Soil Moisture Sensor**
 * **1-Channel Relay & 5V Water Pump**
-    * **Specifications**: Relay triggers at 5V, Pump flow rate 1.5-2.0 L/min.
-    * **Operation**: Provides physical isolation between the low-power MCU and the high-current motor.
 
 ### Ⅱ. Connections and System Design
 The hardware design emphasizes power isolation and precise signal routing.
-
-#### **Pin Mapping Table**
-| Component | Microcontroller Pin | Function |
-| :--- | :--- | :--- |
-| Soil Moisture Sensor | ESP8266 - **A0** | Analog Data Input |
-| Relay Module (IN) | ESP8266 - **D1 (GPIO 5)** | Pump Control Signal |
-| DHT11 Sensor | ESP8266 - **D2 (GPIO 4)** | Digital Data Input |
-| ESP32-CAM | **Independent Power** | Vision Streaming |
 
 #### **Wiring Diagram**
 <img src="images/WiringDiagram.jpg" width="600px"> 
