@@ -134,10 +134,10 @@ The hardware design emphasizes power isolation and precise signal routing.
 ### Ⅲ. Visualization
 The system utilizes the Blynk IoT platform to provide a monitoring experience across devices.  
 
-**Web Dashboard**
+* **Web Dashboard**
 <img src="images/Dashboard.jpg" width="600px"> 
 
-**Mobile App Interface**
+* **Mobile App Interface**
 <img src="images/Mobile.jpg" width="300px">
 
 
@@ -161,9 +161,9 @@ Our system provides a more observable and cost-effective solution compared to ex
 
 | Existing Products | Core Features | Our Competitive Advantages |
 | :--- | :--- | :--- |
-| **Click & Grow** | Capsule-based cultivation with automatic watering and lighting; closed app ecosystem. | • **Cheaper:** Built on a modular open IoT architecture.• **Real-Time Visual Monitoring:** Integrated camera feed to see plant health directly. |
-| **AeroGarden** | Automated indoor hydroponic system focusing on water-based growth and lighting. | • **Comprehensive Sensing:** Includes soil moisture and temperature sensors.• **Smart Irrigation:** Waters based on real-time soil conditions, not fixed routines. |
-| **FYTA Beam** | Sensor-based monitoring providing data-driven recommendations via app. | • **Automated Action:** Provides direct irrigation control based on data, not just alerts.• **Integrated Dashboards:** Cross-platform monitoring and automated action through Cloud IoT. |
+| **Click & Grow** | Capsule-based cultivation with automatic watering and lighting; closed app ecosystem. | • **Cheaper:** Built on a modular open IoT architecture.<br>• **Real-Time Visual Monitoring:** Integrated camera feed to see plant health directly. |
+| **AeroGarden** | Automated indoor hydroponic system focusing on water-based growth and lighting. | • **Comprehensive Sensing:** Includes soil moisture and temperature sensors.<br>• **Smart Irrigation:** Waters based on real-time soil conditions, not fixed routines. |
+| **FYTA Beam** | Sensor-based monitoring providing data-driven recommendations via app. | • **Automated Action:** Provides direct irrigation control based on data, not just alerts.<br>• **Integrated Dashboards:** Cross-platform monitoring and automated action through Cloud IoT. |
 
 
 
