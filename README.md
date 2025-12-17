@@ -73,7 +73,12 @@ To ensure a robust IIoT testbed, the functions are organized as follows:
 ### Ⅲ. Architecture Diagram
 The system integrates complex logic flows to ensure the plant receives care even under varying network conditions:
 <img src="images/LayeredArchitecture .png" width="600px"> 
-![System Architecture](連結到圖片路徑)
+
+* **The Structure of ESP32-CAM**
+<img src="images/SystemStructureESP32.png" width="500px">
+
+* **The Structure of Blynk**
+<img src="images/StructureBlynk.png" width="800px"> 
 
 
 
