@@ -1,6 +1,6 @@
 # Smart-Pot-Monitoring-System 🪴
 
-This project integrates environmental sensing and automation using an ESP8266 controller. It transmits soil moisture and temperature data to Blynk via MQTT. The system triggers auto-irrigation when moisture drops below a threshold and enables real-time visual monitoring via ESP32-CAM.
+This project integrates environmental sensing and automation using an ESP8266 controller. It transmits soil moisture data to Blynk via MQTT. The system triggers auto-irrigation when moisture drops below a threshold and enables real-time visual monitoring via ESP32-CAM.
 
 
 
@@ -46,7 +46,7 @@ Our goals are centered on delivering both practical utility and technical valida
 
 
 ## Product Design
-<img src="images/Plot.JPG" width="200px">   <img src="images/draft.png" width="400px">  <img src="images/Design2.jpg" width="350px"> 
+<img src="images/Plot.JPG" width="200px">   <img src="images/draft.png" width="350px">  <img src="images/Design2.jpg" width="350px"> 
 
 
 
