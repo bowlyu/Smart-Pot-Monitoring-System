@@ -146,8 +146,8 @@ Our system provides a more observable and cost-effective solution compared to ex
 
 ## Website & Source Code
 * **Project Website:** [Smart Pot Monitoring System - Official Website](https://tsaiyuwang.wixsite.com/smart-pot-monitoring)
+* **Project Slide:** [Smart Pot Monitoring System - Presentation Slide](https://www.canva.com/design/DAG2gfynNX0/WWvV3FHQkb1WkDmDQAY9Mg/edit)
 * **Source Code:** [Found in /src folder](./src)
-
 
 
 ## About Us
